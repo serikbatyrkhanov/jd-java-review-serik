@@ -21,15 +21,14 @@ public class StreamDemo {
 
     /*Task-3*/
     public static List<Project> getListOfProject(User manager){
-       return DataGenerator.getProjects().stream().filter(project -> project.getAssignedManager().getRole().equals("Manager")).collect(Collectors.toList());
+       return DataGenerator.getProjects().stream().filter(project -> project.getAssignedManager().equals(manager)).collect(Collectors.toList());
     }
 
 
-    /*Task-4
+    /*Task-4*/
     public static List<Project> getProjectByProjectCode(String projectCode){
-
+        return DataGenerator.getProjects().stream().filter(project -> project.getProjectCode().equals(projectCode)).collect(Collectors.toList());
     }
-    */
 
     /*Task-5
     public static List<User> getListUsers(){

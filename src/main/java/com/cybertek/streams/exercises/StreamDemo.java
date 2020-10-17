@@ -20,9 +20,9 @@ public class StreamDemo {
     }
 
     /*Task-3*/
-//    public static List<Project> getListOfProject(User manager){
-//        DataGenerator.getUsers().stream().filter(user -> user.getRole().getDescription().equals("Manager")).collect(Collectors.toList());
-//    }
+    public static List<Project> getListOfProject(User manager){
+       return DataGenerator.getProjects().stream().filter(project -> project.getAssignedManager().getRole().equals("Manager")).collect(Collectors.toList());
+    }
 
 
     /*Task-4
